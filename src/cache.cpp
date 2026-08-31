@@ -29,3 +29,23 @@ bool cache::access(std::uint64_t address) {
 
     return false;
 }
+
+std::size_t cache::getTotalAccesses() const{
+    return totalAccesses_;
+}
+
+std::size_t cache::getHits() const{
+    return hits_;
+}
+
+std::size_t cache::getMisses() const{
+    return misses_;
+}
+
+double cache::getHitRate() const{
+    if (totalAccesses_ == 0) {
+        return 0.0;
+    }
+
+    return static_cast<double>(hits_) / totalAccesses_; //convert hits_ and totalAccesses_ to double so we can perform floating-point division
+}

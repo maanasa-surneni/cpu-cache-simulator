@@ -11,6 +11,11 @@ class cache {
         cache(std::size_t cacheSize, std::size_t lineSize); //constructor
 
         bool access(std::uint64_t address);
+
+        std::size_t getTotalAccesses() const;
+        std::size_t getHits() const;
+        std::size_t getMisses() const;
+        double getHitRate() const;
     
     private:
         std::size_t cacheSize_; //total cache capacity
