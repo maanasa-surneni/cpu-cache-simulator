@@ -11,3 +11,10 @@ add_executable(cache-sim
 )
 
 target_include_directories(cache-sim PRIVATE include)
+
+add_executable(cache-tests
+    tests/cacheTests.cpp
+    src/cache.cpp
+)
+
+target_include_directories(cache-tests PRIVATE include)
